@@ -6,6 +6,8 @@ const productsController = new ProductsController();
 
 productRoutes.get("/", productsController.index);
 
+productRoutes.get("/:id", productsController.indexByID);
+
 productRoutes.post("/", productsController.create);
 
 productRoutes.put("/:id", productsController.update);

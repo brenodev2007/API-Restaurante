@@ -12,6 +12,29 @@ export class ProductsController {
     }
   };
 
+  indexByID = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<void> => {
+    try {
+      const id = z.number().parse(req.params.id);
+
+      const product = await knex<ProductRepository>("products")
+        .select()
+        .where({ id })
+        .first();
+
+      if (!product) {
+        res.status(404).json({ message: "Produto não encontrado" });
+      }
+
+      res.status(200).json(product);
+    } catch (error) {
+      next(error);
+    }
+  };
+
   create = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const bodySchema = z.object({
