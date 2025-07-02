@@ -5,7 +5,7 @@ export async function seed(knex: Knex): Promise<void> {
   await knex("products").del();
 
   // Inserts seed entries
-  await knex("table_name").insert([
+  await knex("products").insert([
     { name: "nhoque", price: 45 },
     { name: "lasanha", price: 55 },
     { name: "pizza margherita", price: 60 },
