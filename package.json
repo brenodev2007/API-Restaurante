@@ -4,14 +4,18 @@
   "description": "API para gerenciar pedidos de um restaurante",
   "main": "index.js",
   "scripts": {
-    "start": "tsx watch src/server.ts"
+    "start": "tsx watch src/server.ts",
+    "migration:generate": "node --loader tsx/esm ./node_modules/typeorm/cli.js migration:generate src/migration --dataSource src/data-source.mts",
+    "migration:run": "node --loader tsx/esm ./node_modules/typeorm/cli.js migration:run --dataSource src/data-source.mts"
   },
   "author": "Breno Silva",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0",
+    "knex": "^3.1.0",
     "mysql2": "^3.14.1",
     "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
     "typeorm": "^0.3.25"
   },
   "devDependencies": {
