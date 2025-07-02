@@ -1,7 +1,8 @@
 export default {
   client: "sqlite3",
-  connetion: {
-    filename: "./src/database/database.db",
+  connection: {
+    filename:
+      "/home/breno/www/Programacao/nodejs/API-Restaurante/src/database/database.db",
   },
 
   pool: {
@@ -14,11 +15,13 @@ export default {
   useNullAsDefault: true,
   migrations: {
     extensions: "ts",
-    directory: "./src/database/migrations",
+    directory:
+      "/home/breno/www/Programacao/nodejs/API-Restaurante/src/database/migrations",
   },
 
   seeds: {
     extensions: "ts",
-    directory: "./src/database/seeds",
+    directory:
+      "/home/breno/www/Programacao/nodejs/API-Restaurante/src/database/seeds",
   },
 };
