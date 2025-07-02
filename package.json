@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "tsx watch src/server.ts",
-    "migration:generate": "node --loader tsx/esm ./node_modules/typeorm/cli.js migration:generate src/migration --dataSource src/data-source.mts",
-    "migration:run": "node --loader tsx/esm ./node_modules/typeorm/cli.js migration:run --dataSource src/data-source.mts"
+    "knex": "node --import tsx ./node_modules/.bin/knex"
   },
   "author": "Breno Silva",
   "license": "ISC",
