@@ -1,0 +1,9 @@
+{
+  "name": "api-restaurante",
+  "version": "1.0.0",
+  "description": "API para gerenciar pedidos de um restaurante",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Breno Silva",
+  "license": "ISC"
+}
