@@ -6,4 +6,6 @@ const productsController = new ProductsController();
 
 productRoutes.get("/", productsController.index);
 
+productRoutes.post("/", productsController.create);
+
 export { productRoutes };
