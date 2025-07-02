@@ -3,7 +3,18 @@
   "version": "1.0.0",
   "description": "API para gerenciar pedidos de um restaurante",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "tsx watch src/server.ts"
+  },
   "author": "Breno Silva",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.10",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
 }
