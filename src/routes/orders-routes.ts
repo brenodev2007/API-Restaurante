@@ -6,5 +6,6 @@ const orderRoutes = Router();
 const ordersController = new OrdersController();
 
 orderRoutes.post("/", ordersController.create);
+orderRoutes.get("/table-session/:id", ordersController.index);
 
 export { orderRoutes };

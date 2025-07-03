@@ -46,4 +46,12 @@ export class OrdersController {
       next(error);
     }
   };
+
+  index = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      res.json;
+    } catch (error) {
+      next(error);
+    }
+  };
 }
