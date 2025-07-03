@@ -3,9 +3,12 @@ import { z } from "zod";
 import { knex } from "@/database/knex";
 
 export class TableController {
-  async index(req: Request, res: Response, next: NextFunction) {
+  index = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const tables = 
-    } catch (error) {}
-  }
+      const tables = await knex<TableRepository>("tables").select("*");
+      res.json(tables);
+    } catch (error) {
+      next(error);
+    }
+  };
 }
