@@ -49,7 +49,7 @@ export class TableSessionsController {
     try {
       const id = z.coerce.number().parse(req.params.id);
 
-      const sessions = await knex<TableSessionsRepository>("table_session")
+      const sessions = await knex<TableSessionsRepository>("tables_sessions")
         .where({ id })
         .first();
 
@@ -61,7 +61,7 @@ export class TableSessionsController {
         throw new AppError("session table is already closed");
       }
 
-      await knex<TableSessionsController>("table_session").update({});
+      await knex<TableSessionsController>("tables_sessions").update({});
 
       res.json({ message: `Table Sessions ${id} updated successfully` });
     } catch (error) {
