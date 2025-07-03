@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { knex } from "@/database/knex";
 import { AppError } from "@/utils/AppError";
 import { z } from "zod";
+import { number } from "zod/v4";
 
 export class TableSessionsController {
   create = async (req: Request, res: Response, next: NextFunction) => {
@@ -39,6 +40,30 @@ export class TableSessionsController {
       ).orderBy("closed_at");
 
       res.json(sessions);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  update = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const id = z.coerce.number().parse(req.params.id);
+
+      const sessions = await knex<TableSessionsRepository>("table_session")
+        .where({ id })
+        .first();
+
+      if (!sessions) {
+        throw new AppError("session table not found");
+      }
+
+      if (sessions.closed_at) {
+        throw new AppError("session table is already closed");
+      }
+
+      await knex<TableSessionsController>("table_session").update({});
+
+      res.json({ message: `Table Sessions ${id} updated successfully` });
     } catch (error) {
       next(error);
     }
