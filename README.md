@@ -3,10 +3,6 @@
 
 API RESTful para gerenciamento de produtos, pedidos e cardápio de um restaurante. Criada com **Node.js**, **Express**, **TypeScript** e **Knex** (Query Builder + Migrations).
 
-<p align="center">
-  <img src="./docs/images/banner-api.png" alt="Banner da API Restaurante" width="80%" />
-</p>
-
 ---
 
 ## 📦 Tecnologias Utilizadas
